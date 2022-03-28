@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <script src="./js/angular.min.js"></script>
+     <script src="./js/app.js"></script>
+     <link rel="stylesheet" href="./styles/styles.css">
+     <link rel="stylesheet" href="./styles/bootstrap.min.css" >
+    <meta charset="utf-8">
+    <title>Something Else</title>
+  </head>
+  <body ng-app = 'NarrowItDownApp'>
+      <div class = "title">
+        <h1 >Narrow Restaurant Items</h1>
+      </div>
+
+      <div ng-controller = 'NarrowItDownController as narrow'>
+
+          <br>
+          <input ng-model = "searchValue"  placeholder = "search in menu" class = "item">
+          <button  class="btn btn-info item"  ng-click = "narrow.getItems(searchValue);">Narrow It Down For Me</button>
+
+          <found-items found = "narrow.found"  titles = "narrow.titles"  remove ="narrow.removeMenuItem(index)"  ></found-items>
+
+          <div class="error" ng-if="narrow.searched"><h1>Nothing is found</h1>
+          </div>
+      </div>
+
+
+  </body>
+</html>

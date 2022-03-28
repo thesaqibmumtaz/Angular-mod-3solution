@@ -1,0 +1,11 @@
+.error {
+  color: red ;
+
+}
+
+
+.title,.item{
+
+  position:relative;
+  left: 100px ;
+}
